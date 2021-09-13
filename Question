@@ -15,13 +15,13 @@ using namespace std;
             if(isdigit(s[i]))
             {
                 flag=true;
-                int temp=0;
-                temp = stoi(s[i]);
+                string temp="";
+                temp=s[i];
                 i++;
                 
                 while(flag)
                 {
-                    if(isdigit(s[i]))
+                    if(!isdigit(s[i]))
                     {
                         flag =false;
                         break;
@@ -29,16 +29,16 @@ using namespace std;
                     
                     else
                     {
-                        temp= temp*10 + stoi(s[i]);
+                        temp+=s[i];
                         i++;
                     }
                     
                 }
                 
-                ans+=temp;
+               ans+=stoi(temp);
             }
             
-            else
+            else if(flag==false)
             res+=s[i];
             
         }
