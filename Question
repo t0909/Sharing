@@ -1,1 +1,41 @@
-https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1/?category[]=Heap&category[]=Heap&problemStatus=unsolved&difficulty[]=1&page=1&query=category[]HeapproblemStatusunsolveddifficulty[]1page1category[]Heap#
+#include<bits/stdc++.h>
+using namespace std;
+
+void printstring(string a)
+{
+    int n = a.size();
+    int sum =0;
+    string rem = "",temp = "";
+
+    for(int i =0;i<n;i++)
+    {
+
+        if(isdigit(a[i]))
+        {
+            while(isdigit(a[i]) != 0)
+            {
+                temp += a[i];
+                i++;
+            }
+            int x = stoi(temp);
+            sum += x;
+            temp = "";
+        }
+        rem += a[i];
+
+
+    }
+
+    cout << rem << "\n";
+    cout << sum ;
+}
+
+
+int main() 
+{
+    string a;
+    cin >> a;
+    printstring(a);
+
+    return 0;
+}
